@@ -11,8 +11,8 @@ else
 	#fi
 
 	if grep -q 'CleanMethod' /etc/pacman.conf; then
-		echo 'removendo pacotes antigos do cache...'
-		echo 'removendo repositórios de sincronização não utilizados...'
+        #echo 'removendo pacotes antigos do cache...'
+		#echo 'removendo repositórios de sincronização não utilizados...'
         #pacman -Scv --noconfirm >/dev/null
         paccache -rvk1 >/dev/null
 	fi

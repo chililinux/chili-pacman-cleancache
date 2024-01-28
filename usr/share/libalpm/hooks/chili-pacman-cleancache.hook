@@ -5,6 +5,6 @@ Type = Package
 Target = *
 
 [Action]
-Description = Removing unnecessary cached files
+Description = chili-pacman-cleancache: Removing unnecessary packages from cache
 When = PostTransaction
 Exec = /usr/share/libalpm/scripts/chili-pacman-cleancache
