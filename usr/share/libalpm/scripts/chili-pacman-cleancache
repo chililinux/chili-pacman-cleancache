@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# /usr/share/libalpm/scripts/chili-pacman-cleancache
+# criado   : dom 28 jan 2024 15:46:16 -04
+# alterado : dom 28 jan 2024 15:46:16 -04
+
+if [ "$(id -u)" != "0" ]; then
+	printf "${red}%s\n" "$(gettext "erro: Você não pode executar esta operação a menos que seja root!")"
+else
+	#if grep -q 'KeepNumPackages = 0' /etc/pamac.conf; then
+	#	paccache -rvk0 >/dev/null
+	#fi
+
+	if grep -q 'CleanMethod' /etc/pacman.conf; then
+		echo 'removendo pacotes antigos do cache...'
+		echo 'removendo repositórios de sincronização não utilizados...'
+		pacman -Scv --noconfirm >/dev/null
+	fi
+fi
