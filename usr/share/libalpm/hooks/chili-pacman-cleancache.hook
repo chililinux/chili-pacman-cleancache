@@ -1,10 +1,10 @@
 [Trigger]
 Operation = Install
 Operation = Upgrade
-Type = Package
-Target = *
+Type      = Package
+Target    = *
 
 [Action]
-Description = chili-pacman-cleancache: Removing unnecessary packages from cache
-When = PostTransaction
-Exec = /usr/share/libalpm/scripts/chili-pacman-cleancache
+Description = chili-pacman-cleancache: Removing old packages from cache
+When        = PostTransaction
+Exec        = /usr/share/libalpm/scripts/chili-pacman-cleancache

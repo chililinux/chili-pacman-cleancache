@@ -6,14 +6,6 @@
 if [ "$(id -u)" != "0" ]; then
 	printf "${red}%s\n" "$(gettext "erro: Você não pode executar esta operação a menos que seja root!")"
 else
-	#if grep -q 'KeepNumPackages = 0' /etc/pamac.conf; then
-	#	paccache -rvk0 >/dev/null
-	#fi
-
-	if grep -q 'CleanMethod' /etc/pacman.conf; then
-        #echo 'removendo pacotes antigos do cache...'
-		#echo 'removendo repositórios de sincronização não utilizados...'
-        #pacman -Scv --noconfirm >/dev/null
-        paccache -rvk1 >/dev/null
-	fi
+  echo 'removendo pacotes antigos do cache...'
+  paccache -rvk1 >/dev/null
 fi
