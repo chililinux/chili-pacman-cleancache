@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # /usr/share/libalpm/scripts/chili-pacman-cleancache
-# criado   : dom 28 jan 2024 15:46:16 -04
-# alterado : dom 28 jan 2024 15:46:16 -04
+# criado    : dom 28 jan 2024 15:46:16 -04
+# alterado  : dom 28 jan 2024 15:46:16 -04
+# atualizado: qui 03 abr 2025 16:00:45 -04
+
 
 if [ "$(id -u)" != "0" ]; then
-	printf "${red}%s\n" "$(gettext "erro: Você não pode executar esta operação a menos que seja root!")"
+	printf "${red}%s\n" "erro: Você não pode executar esta operação a menos que seja root!"
 else
-  echo 'removendo pacotes antigos do cache...'
   paccache -rvk1 >/dev/null
 fi
